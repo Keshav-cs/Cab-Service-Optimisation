@@ -1,0 +1,3155 @@
+{
+  "contractName": "Election",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "driversCount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "Driver1",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "drivers",
+      "outputs": [
+        {
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "lat",
+          "type": "uint256"
+        },
+        {
+          "name": "long",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_DriverId",
+          "type": "uint256"
+        }
+      ],
+      "name": "votedEvent",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_DriverId",
+          "type": "uint256"
+        },
+        {
+          "name": "lat",
+          "type": "uint256"
+        },
+        {
+          "name": "long",
+          "type": "uint256"
+        }
+      ],
+      "name": "vote",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"_DriverId\",\"type\":\"uint256\"},{\"name\":\"lat\",\"type\":\"uint256\"},{\"name\":\"long\",\"type\":\"uint256\"}],\"name\":\"vote\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"driversCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"Driver1\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"drivers\",\"outputs\":[{\"name\":\"id\",\"type\":\"uint256\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"lat\",\"type\":\"uint256\"},{\"name\":\"long\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"_DriverId\",\"type\":\"uint256\"}],\"name\":\"votedEvent\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/Keshav/Desktop/7th Sem Project/Smart Code/contracts/Election.sol\":\"Election\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Keshav/Desktop/7th Sem Project/Smart Code/contracts/Election.sol\":{\"keccak256\":\"0xcaa04847adbfaf2110494f0cd1160dc8e6036303d163636cf323df853efe3300\",\"urls\":[\"bzzr://92da30a7c2d59f170dff38d7ddb3b8d63d795fdaff6d004d97efa99f5bb5d187\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040518060400160405280600781526020017f417765736f6d65000000000000000000000000000000000000000000000000008152506000908051906020019061005c929190610287565b506100a16040518060400160405280600881526020017f44726976657220310000000000000000000000000000000000000000000000008152506101fa60201b60201c565b6100e56040518060400160405280600881526020017f44726976657220320000000000000000000000000000000000000000000000008152506101fa60201b60201c565b6101296040518060400160405280600881526020017f44726976657220330000000000000000000000000000000000000000000000008152506101fa60201b60201c565b61016d6040518060400160405280600881526020017f44726976657220340000000000000000000000000000000000000000000000008152506101fa60201b60201c565b6101b16040518060400160405280600881526020017f44726976657220350000000000000000000000000000000000000000000000008152506101fa60201b60201c565b6101f56040518060400160405280600881526020017f44726976657220360000000000000000000000000000000000000000000000008152506101fa60201b60201c565b6103ac565b6002600081548092919060010191905055506040518060800160405280600254815260200182815260200160008152602001600081525060016000600254815260200190815260200160002060008201518160000155602082015181600101908051906020019061026c929190610307565b50604082015181600201556060820151816003015590505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106102c857805160ff19168380011785556102f6565b828001600101855582156102f6579182015b828111156102f55782518255916020019190600101906102da565b5b5090506103039190610387565b5090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061034857805160ff1916838001178555610376565b82800160010185558215610376579182015b8281111561037557825182559160200191906001019061035a565b5b5090506103839190610387565b5090565b6103a991905b808211156103a557600081600090555060010161038d565b5090565b90565b61040b806103bb6000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80638a6655d614610051578063bd8d1e8214610093578063e5ee4eb5146100b1578063f79e545014610134575b600080fd5b6100916004803603606081101561006757600080fd5b810190808035906020019092919080359060200190929190803590602001909291905050506101f0565b005b61009b610273565b6040518082815260200191505060405180910390f35b6100b9610279565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100f95780820151818401526020810190506100de565b50505050905090810190601f1680156101265780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101606004803603602081101561014a57600080fd5b8101908080359060200190929190505050610317565b6040518085815260200180602001848152602001838152602001828103825285818151815260200191508051906020019080838360005b838110156101b2578082015181840152602081019050610197565b50505050905090810190601f1680156101df5780820380516001836020036101000a031916815260200191505b509550505050505060405180910390f35b60008311801561020257506002548311155b61020b57600080fd5b816001600085815260200190815260200160002060020181905550806001600085815260200190815260200160002060030181905550827ffff3c900d938d21d0990d786e819f29b8d05c1ef587b462b939609625b684b1660405160405180910390a2505050565b60025481565b60008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561030f5780601f106102e45761010080835404028352916020019161030f565b820191906000526020600020905b8154815290600101906020018083116102f257829003601f168201915b505050505081565b6001602052806000526040600020600091509050806000015490806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103c95780601f1061039e576101008083540402835291602001916103c9565b820191906000526020600020905b8154815290600101906020018083116103ac57829003601f168201915b505050505090806002015490806003015490508456fea165627a7a723058200e1250c0fdb73140a4b918a082d351c86a62e3ccdc4f185e983de226a005a7ee0029",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c80638a6655d614610051578063bd8d1e8214610093578063e5ee4eb5146100b1578063f79e545014610134575b600080fd5b6100916004803603606081101561006757600080fd5b810190808035906020019092919080359060200190929190803590602001909291905050506101f0565b005b61009b610273565b6040518082815260200191505060405180910390f35b6100b9610279565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100f95780820151818401526020810190506100de565b50505050905090810190601f1680156101265780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101606004803603602081101561014a57600080fd5b8101908080359060200190929190505050610317565b6040518085815260200180602001848152602001838152602001828103825285818151815260200191508051906020019080838360005b838110156101b2578082015181840152602081019050610197565b50505050905090810190601f1680156101df5780820380516001836020036101000a031916815260200191505b509550505050505060405180910390f35b60008311801561020257506002548311155b61020b57600080fd5b816001600085815260200190815260200160002060020181905550806001600085815260200190815260200160002060030181905550827ffff3c900d938d21d0990d786e819f29b8d05c1ef587b462b939609625b684b1660405160405180910390a2505050565b60025481565b60008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561030f5780601f106102e45761010080835404028352916020019161030f565b820191906000526020600020905b8154815290600101906020018083116102f257829003601f168201915b505050505081565b6001602052806000526040600020600091509050806000015490806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103c95780601f1061039e576101008083540402835291602001916103c9565b820191906000526020600020905b8154815290600101906020018083116103ac57829003601f168201915b505050505090806002015490806003015490508456fea165627a7a723058200e1250c0fdb73140a4b918a082d351c86a62e3ccdc4f185e983de226a005a7ee0029",
+  "sourceMap": "24:1422:0:-;;;523:247;8:9:-1;5:2;;;30:1;27;20:12;5:2;523:247:0;558:19;;;;;;;;;;;;;;;;;:7;:19;;;;;;;;;;;;:::i;:::-;;587:21;;;;;;;;;;;;;;;;;;:9;;;:21;;:::i;:::-;618;;;;;;;;;;;;;;;;;;:9;;;:21;;:::i;:::-;649;;;;;;;;;;;;;;;;;;:9;;;:21;;:::i;:::-;680;;;;;;;;;;;;;;;;;;:9;;;:21;;:::i;:::-;711;;;;;;;;;;;;;;;;;;:9;;;:21;;:::i;:::-;742;;;;;;;;;;;;;;;;;;:9;;;:21;;:::i;:::-;24:1422;;776:148;835:12;;:15;;;;;;;;;;;;;884:33;;;;;;;;891:12;;884:33;;;;905:5;884:33;;;;912:1;884:33;;;;915:1;884:33;;;860:7;:21;868:12;;860:21;;;;;;;;;;;:57;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;776:148;:::o;24:1422::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "24:1422:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;24:1422:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;930:514;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;930:514:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;411:24;;;:::i;:::-;;;;;;;;;;;;;;;;;;;70:21;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;70:21:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;340:38;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;340:38:0;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;340:38:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;930:514;1145:1;1133:9;:13;:42;;;;;1163:12;;1150:9;:25;;1133:42;1125:51;;;;;;1326:3;1301:7;:18;1309:9;1301:18;;;;;;;;;;;:22;;:28;;;;1365:4;1339:7;:18;1347:9;1339:18;;;;;;;;;;;:23;;:30;;;;1427:9;1416:21;;;;;;;;;;930:514;;;:::o;411:24::-;;;;:::o;70:21::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;340:38::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity 0.5.8;\n\ncontract Election {\n    // Model a Driver\n    string public Driver1;\n\n    struct Driver {\n        uint id;\n        string name;\n        uint lat;\n        uint long; //ufixed long\n    }\n\n    // Store accounts that have voted\n    // mapping(address => bool) public voters;\n    // Store drivers\n    // Fetch Driver\n    mapping(uint => Driver) public drivers;\n    // Store drivers Count\n    uint public driversCount;\n\n    // voted event\n    event votedEvent (\n        uint indexed _DriverId\n    );\n\n    constructor() public\n    {\n        Driver1 = \"Awesome\";\n        addDriver(\"Driver 1\");\n        addDriver(\"Driver 2\");\n        addDriver(\"Driver 3\");\n        addDriver(\"Driver 4\");\n        addDriver(\"Driver 5\");\n        addDriver(\"Driver 6\");\n    }\n\n    function addDriver (string memory _name) private {\n        driversCount ++;\n        drivers[driversCount] = Driver(driversCount, _name, 0, 0);\n    }\n\n    function vote (uint _DriverId, uint lat, uint long) public {\n        // require that they haven't voted before\n        // require(!voters[msg.sender]);\n\n        // require a valid Driver\n        require(_DriverId > 0 && _DriverId <= driversCount);\n\n        // record that voter has voted\n        // voters[msg.sender] = true;\n\n        // update Driver vote Count\n        drivers[_DriverId].lat = lat;\n        drivers[_DriverId].long = long;\n\n        // trigger voted event\n        emit votedEvent(_DriverId);\n    }\n}\n",
+  "sourcePath": "C:/Users/Keshav/Desktop/7th Sem Project/Smart Code/contracts/Election.sol",
+  "ast": {
+    "absolutePath": "/C/Users/Keshav/Desktop/7th Sem Project/Smart Code/contracts/Election.sol",
+    "exportedSymbols": {
+      "Election": [
+        113
+      ]
+    },
+    "id": 114,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".8"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:22:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 113,
+        "linearizedBaseContracts": [
+          113
+        ],
+        "name": "Election",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 3,
+            "name": "Driver1",
+            "nodeType": "VariableDeclaration",
+            "scope": 113,
+            "src": "70:21:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_storage",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 2,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "70:6:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Election.Driver",
+            "id": 12,
+            "members": [
+              {
+                "constant": false,
+                "id": 5,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 12,
+                "src": "122:7:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 4,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "122:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 7,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 12,
+                "src": "139:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 6,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "139:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9,
+                "name": "lat",
+                "nodeType": "VariableDeclaration",
+                "scope": 12,
+                "src": "160:8:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 8,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "160:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 11,
+                "name": "long",
+                "nodeType": "VariableDeclaration",
+                "scope": 12,
+                "src": "178:9:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 10,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "178:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Driver",
+            "nodeType": "StructDefinition",
+            "scope": 113,
+            "src": "98:110:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 16,
+            "name": "drivers",
+            "nodeType": "VariableDeclaration",
+            "scope": 113,
+            "src": "340:38:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Driver_$12_storage_$",
+              "typeString": "mapping(uint256 => struct Election.Driver)"
+            },
+            "typeName": {
+              "id": 15,
+              "keyType": {
+                "id": 13,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "348:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "340:23:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Driver_$12_storage_$",
+                "typeString": "mapping(uint256 => struct Election.Driver)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 14,
+                "name": "Driver",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 12,
+                "src": "356:6:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Driver_$12_storage_ptr",
+                  "typeString": "struct Election.Driver"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 18,
+            "name": "driversCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 113,
+            "src": "411:24:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 17,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "411:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 22,
+            "name": "votedEvent",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 21,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 20,
+                  "indexed": true,
+                  "name": "_DriverId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 22,
+                  "src": "488:22:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "488:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "478:38:0"
+            },
+            "src": "461:56:0"
+          },
+          {
+            "body": {
+              "id": 53,
+              "nodeType": "Block",
+              "src": "548:222:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 27,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 25,
+                      "name": "Driver1",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3,
+                      "src": "558:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "417765736f6d65",
+                      "id": 26,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "string",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "568:9:0",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_stringliteral_717d210d791698d0b2671b68512ee2f92cfc0cb753d93db10704c211f7fda7dd",
+                        "typeString": "literal_string \"Awesome\""
+                      },
+                      "value": "Awesome"
+                    },
+                    "src": "558:19:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 28,
+                  "nodeType": "ExpressionStatement",
+                  "src": "558:19:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4472697665722031",
+                        "id": 30,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "597:10:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_f8a67a3158e0b2398cafa032302afa3341230593040e48044cd9f7ef128c9f5e",
+                          "typeString": "literal_string \"Driver 1\""
+                        },
+                        "value": "Driver 1"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_f8a67a3158e0b2398cafa032302afa3341230593040e48044cd9f7ef128c9f5e",
+                          "typeString": "literal_string \"Driver 1\""
+                        }
+                      ],
+                      "id": 29,
+                      "name": "addDriver",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 74,
+                      "src": "587:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 31,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "587:21:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 32,
+                  "nodeType": "ExpressionStatement",
+                  "src": "587:21:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4472697665722032",
+                        "id": 34,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "628:10:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_50dc7838ede40dfec8e76c49e3ef5eb80937017e65255d449307d49f842d0244",
+                          "typeString": "literal_string \"Driver 2\""
+                        },
+                        "value": "Driver 2"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_50dc7838ede40dfec8e76c49e3ef5eb80937017e65255d449307d49f842d0244",
+                          "typeString": "literal_string \"Driver 2\""
+                        }
+                      ],
+                      "id": 33,
+                      "name": "addDriver",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 74,
+                      "src": "618:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 35,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "618:21:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 36,
+                  "nodeType": "ExpressionStatement",
+                  "src": "618:21:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4472697665722033",
+                        "id": 38,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "659:10:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_abbf2da0c86266a07470218e4189850f87888302b09b2c31def323de0e80fa4c",
+                          "typeString": "literal_string \"Driver 3\""
+                        },
+                        "value": "Driver 3"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_abbf2da0c86266a07470218e4189850f87888302b09b2c31def323de0e80fa4c",
+                          "typeString": "literal_string \"Driver 3\""
+                        }
+                      ],
+                      "id": 37,
+                      "name": "addDriver",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 74,
+                      "src": "649:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 39,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "649:21:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 40,
+                  "nodeType": "ExpressionStatement",
+                  "src": "649:21:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4472697665722034",
+                        "id": 42,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "690:10:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_8692b9c73c64a71d183f0cbefd0364d25e4d1623b93320014d863c874d68e1af",
+                          "typeString": "literal_string \"Driver 4\""
+                        },
+                        "value": "Driver 4"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_8692b9c73c64a71d183f0cbefd0364d25e4d1623b93320014d863c874d68e1af",
+                          "typeString": "literal_string \"Driver 4\""
+                        }
+                      ],
+                      "id": 41,
+                      "name": "addDriver",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 74,
+                      "src": "680:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 43,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "680:21:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 44,
+                  "nodeType": "ExpressionStatement",
+                  "src": "680:21:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4472697665722035",
+                        "id": 46,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "721:10:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_195fa3122f55bf6dc6f04f6fbcc503fa0738174ea3d8ee3602c5326dd9501aa6",
+                          "typeString": "literal_string \"Driver 5\""
+                        },
+                        "value": "Driver 5"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_195fa3122f55bf6dc6f04f6fbcc503fa0738174ea3d8ee3602c5326dd9501aa6",
+                          "typeString": "literal_string \"Driver 5\""
+                        }
+                      ],
+                      "id": 45,
+                      "name": "addDriver",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 74,
+                      "src": "711:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 47,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "711:21:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 48,
+                  "nodeType": "ExpressionStatement",
+                  "src": "711:21:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4472697665722036",
+                        "id": 50,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "752:10:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_e7646200e961df08c1d2c1ee16ae823c351a8e55ef09ca39cdc8296e02fab564",
+                          "typeString": "literal_string \"Driver 6\""
+                        },
+                        "value": "Driver 6"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_e7646200e961df08c1d2c1ee16ae823c351a8e55ef09ca39cdc8296e02fab564",
+                          "typeString": "literal_string \"Driver 6\""
+                        }
+                      ],
+                      "id": 49,
+                      "name": "addDriver",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 74,
+                      "src": "742:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 51,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "742:21:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 52,
+                  "nodeType": "ExpressionStatement",
+                  "src": "742:21:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 54,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 23,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "534:2:0"
+            },
+            "returnParameters": {
+              "id": 24,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "548:0:0"
+            },
+            "scope": 113,
+            "src": "523:247:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 73,
+              "nodeType": "Block",
+              "src": "825:99:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 60,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "835:15:0",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 59,
+                      "name": "driversCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 18,
+                      "src": "835:12:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 61,
+                  "nodeType": "ExpressionStatement",
+                  "src": "835:15:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 71,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 62,
+                        "name": "drivers",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 16,
+                        "src": "860:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Driver_$12_storage_$",
+                          "typeString": "mapping(uint256 => struct Election.Driver storage ref)"
+                        }
+                      },
+                      "id": 64,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 63,
+                        "name": "driversCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 18,
+                        "src": "868:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "860:21:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Driver_$12_storage",
+                        "typeString": "struct Election.Driver storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 66,
+                          "name": "driversCount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 18,
+                          "src": "891:12:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 67,
+                          "name": "_name",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 56,
+                          "src": "905:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 68,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "912:1:0",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 69,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "915:1:0",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          }
+                        ],
+                        "id": 65,
+                        "name": "Driver",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12,
+                        "src": "884:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Driver_$12_storage_ptr_$",
+                          "typeString": "type(struct Election.Driver storage pointer)"
+                        }
+                      },
+                      "id": 70,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "884:33:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Driver_$12_memory",
+                        "typeString": "struct Election.Driver memory"
+                      }
+                    },
+                    "src": "860:57:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Driver_$12_storage",
+                      "typeString": "struct Election.Driver storage ref"
+                    }
+                  },
+                  "id": 72,
+                  "nodeType": "ExpressionStatement",
+                  "src": "860:57:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 74,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addDriver",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 57,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 56,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 74,
+                  "src": "796:19:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 55,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "796:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "795:21:0"
+            },
+            "returnParameters": {
+              "id": 58,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "825:0:0"
+            },
+            "scope": 113,
+            "src": "776:148:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 111,
+              "nodeType": "Block",
+              "src": "989:455:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 90,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 86,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "id": 84,
+                            "name": "_DriverId",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 76,
+                            "src": "1133:9:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": ">",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "hexValue": "30",
+                            "id": 85,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1145:1:0",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          },
+                          "src": "1133:13:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "&&",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 89,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "id": 87,
+                            "name": "_DriverId",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 76,
+                            "src": "1150:9:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "<=",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "id": 88,
+                            "name": "driversCount",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 18,
+                            "src": "1163:12:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "1150:25:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "src": "1133:42:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 83,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        188,
+                        189
+                      ],
+                      "referencedDeclaration": 188,
+                      "src": "1125:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 91,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1125:51:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 92,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1125:51:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 98,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 93,
+                          "name": "drivers",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16,
+                          "src": "1301:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Driver_$12_storage_$",
+                            "typeString": "mapping(uint256 => struct Election.Driver storage ref)"
+                          }
+                        },
+                        "id": 95,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 94,
+                          "name": "_DriverId",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 76,
+                          "src": "1309:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "1301:18:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Driver_$12_storage",
+                          "typeString": "struct Election.Driver storage ref"
+                        }
+                      },
+                      "id": 96,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "lat",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 9,
+                      "src": "1301:22:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 97,
+                      "name": "lat",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 78,
+                      "src": "1326:3:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1301:28:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 99,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1301:28:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 105,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 100,
+                          "name": "drivers",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16,
+                          "src": "1339:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Driver_$12_storage_$",
+                            "typeString": "mapping(uint256 => struct Election.Driver storage ref)"
+                          }
+                        },
+                        "id": 102,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 101,
+                          "name": "_DriverId",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 76,
+                          "src": "1347:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "1339:18:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Driver_$12_storage",
+                          "typeString": "struct Election.Driver storage ref"
+                        }
+                      },
+                      "id": 103,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "long",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 11,
+                      "src": "1339:23:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 104,
+                      "name": "long",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 80,
+                      "src": "1365:4:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1339:30:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 106,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1339:30:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 108,
+                        "name": "_DriverId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 76,
+                        "src": "1427:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 107,
+                      "name": "votedEvent",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 22,
+                      "src": "1416:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 109,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1416:21:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 110,
+                  "nodeType": "EmitStatement",
+                  "src": "1411:26:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 112,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "vote",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 81,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 76,
+                  "name": "_DriverId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 112,
+                  "src": "945:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 75,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "945:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 78,
+                  "name": "lat",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 112,
+                  "src": "961:8:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 77,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "961:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 80,
+                  "name": "long",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 112,
+                  "src": "971:9:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 79,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "971:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "944:37:0"
+            },
+            "returnParameters": {
+              "id": 82,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "989:0:0"
+            },
+            "scope": 113,
+            "src": "930:514:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 114,
+        "src": "24:1422:0"
+      }
+    ],
+    "src": "0:1447:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/Keshav/Desktop/7th Sem Project/Smart Code/contracts/Election.sol",
+    "exportedSymbols": {
+      "Election": [
+        113
+      ]
+    },
+    "id": 114,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".8"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:22:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 113,
+        "linearizedBaseContracts": [
+          113
+        ],
+        "name": "Election",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 3,
+            "name": "Driver1",
+            "nodeType": "VariableDeclaration",
+            "scope": 113,
+            "src": "70:21:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_storage",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 2,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "70:6:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Election.Driver",
+            "id": 12,
+            "members": [
+              {
+                "constant": false,
+                "id": 5,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 12,
+                "src": "122:7:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 4,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "122:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 7,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 12,
+                "src": "139:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 6,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "139:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9,
+                "name": "lat",
+                "nodeType": "VariableDeclaration",
+                "scope": 12,
+                "src": "160:8:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 8,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "160:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 11,
+                "name": "long",
+                "nodeType": "VariableDeclaration",
+                "scope": 12,
+                "src": "178:9:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 10,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "178:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Driver",
+            "nodeType": "StructDefinition",
+            "scope": 113,
+            "src": "98:110:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 16,
+            "name": "drivers",
+            "nodeType": "VariableDeclaration",
+            "scope": 113,
+            "src": "340:38:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Driver_$12_storage_$",
+              "typeString": "mapping(uint256 => struct Election.Driver)"
+            },
+            "typeName": {
+              "id": 15,
+              "keyType": {
+                "id": 13,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "348:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "340:23:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Driver_$12_storage_$",
+                "typeString": "mapping(uint256 => struct Election.Driver)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 14,
+                "name": "Driver",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 12,
+                "src": "356:6:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Driver_$12_storage_ptr",
+                  "typeString": "struct Election.Driver"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 18,
+            "name": "driversCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 113,
+            "src": "411:24:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 17,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "411:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 22,
+            "name": "votedEvent",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 21,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 20,
+                  "indexed": true,
+                  "name": "_DriverId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 22,
+                  "src": "488:22:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "488:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "478:38:0"
+            },
+            "src": "461:56:0"
+          },
+          {
+            "body": {
+              "id": 53,
+              "nodeType": "Block",
+              "src": "548:222:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 27,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 25,
+                      "name": "Driver1",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3,
+                      "src": "558:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "417765736f6d65",
+                      "id": 26,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "string",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "568:9:0",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_stringliteral_717d210d791698d0b2671b68512ee2f92cfc0cb753d93db10704c211f7fda7dd",
+                        "typeString": "literal_string \"Awesome\""
+                      },
+                      "value": "Awesome"
+                    },
+                    "src": "558:19:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 28,
+                  "nodeType": "ExpressionStatement",
+                  "src": "558:19:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4472697665722031",
+                        "id": 30,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "597:10:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_f8a67a3158e0b2398cafa032302afa3341230593040e48044cd9f7ef128c9f5e",
+                          "typeString": "literal_string \"Driver 1\""
+                        },
+                        "value": "Driver 1"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_f8a67a3158e0b2398cafa032302afa3341230593040e48044cd9f7ef128c9f5e",
+                          "typeString": "literal_string \"Driver 1\""
+                        }
+                      ],
+                      "id": 29,
+                      "name": "addDriver",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 74,
+                      "src": "587:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 31,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "587:21:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 32,
+                  "nodeType": "ExpressionStatement",
+                  "src": "587:21:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4472697665722032",
+                        "id": 34,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "628:10:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_50dc7838ede40dfec8e76c49e3ef5eb80937017e65255d449307d49f842d0244",
+                          "typeString": "literal_string \"Driver 2\""
+                        },
+                        "value": "Driver 2"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_50dc7838ede40dfec8e76c49e3ef5eb80937017e65255d449307d49f842d0244",
+                          "typeString": "literal_string \"Driver 2\""
+                        }
+                      ],
+                      "id": 33,
+                      "name": "addDriver",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 74,
+                      "src": "618:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 35,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "618:21:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 36,
+                  "nodeType": "ExpressionStatement",
+                  "src": "618:21:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4472697665722033",
+                        "id": 38,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "659:10:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_abbf2da0c86266a07470218e4189850f87888302b09b2c31def323de0e80fa4c",
+                          "typeString": "literal_string \"Driver 3\""
+                        },
+                        "value": "Driver 3"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_abbf2da0c86266a07470218e4189850f87888302b09b2c31def323de0e80fa4c",
+                          "typeString": "literal_string \"Driver 3\""
+                        }
+                      ],
+                      "id": 37,
+                      "name": "addDriver",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 74,
+                      "src": "649:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 39,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "649:21:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 40,
+                  "nodeType": "ExpressionStatement",
+                  "src": "649:21:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4472697665722034",
+                        "id": 42,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "690:10:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_8692b9c73c64a71d183f0cbefd0364d25e4d1623b93320014d863c874d68e1af",
+                          "typeString": "literal_string \"Driver 4\""
+                        },
+                        "value": "Driver 4"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_8692b9c73c64a71d183f0cbefd0364d25e4d1623b93320014d863c874d68e1af",
+                          "typeString": "literal_string \"Driver 4\""
+                        }
+                      ],
+                      "id": 41,
+                      "name": "addDriver",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 74,
+                      "src": "680:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 43,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "680:21:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 44,
+                  "nodeType": "ExpressionStatement",
+                  "src": "680:21:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4472697665722035",
+                        "id": 46,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "721:10:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_195fa3122f55bf6dc6f04f6fbcc503fa0738174ea3d8ee3602c5326dd9501aa6",
+                          "typeString": "literal_string \"Driver 5\""
+                        },
+                        "value": "Driver 5"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_195fa3122f55bf6dc6f04f6fbcc503fa0738174ea3d8ee3602c5326dd9501aa6",
+                          "typeString": "literal_string \"Driver 5\""
+                        }
+                      ],
+                      "id": 45,
+                      "name": "addDriver",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 74,
+                      "src": "711:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 47,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "711:21:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 48,
+                  "nodeType": "ExpressionStatement",
+                  "src": "711:21:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4472697665722036",
+                        "id": 50,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "752:10:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_e7646200e961df08c1d2c1ee16ae823c351a8e55ef09ca39cdc8296e02fab564",
+                          "typeString": "literal_string \"Driver 6\""
+                        },
+                        "value": "Driver 6"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_e7646200e961df08c1d2c1ee16ae823c351a8e55ef09ca39cdc8296e02fab564",
+                          "typeString": "literal_string \"Driver 6\""
+                        }
+                      ],
+                      "id": 49,
+                      "name": "addDriver",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 74,
+                      "src": "742:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 51,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "742:21:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 52,
+                  "nodeType": "ExpressionStatement",
+                  "src": "742:21:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 54,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 23,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "534:2:0"
+            },
+            "returnParameters": {
+              "id": 24,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "548:0:0"
+            },
+            "scope": 113,
+            "src": "523:247:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 73,
+              "nodeType": "Block",
+              "src": "825:99:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 60,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "835:15:0",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 59,
+                      "name": "driversCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 18,
+                      "src": "835:12:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 61,
+                  "nodeType": "ExpressionStatement",
+                  "src": "835:15:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 71,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 62,
+                        "name": "drivers",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 16,
+                        "src": "860:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Driver_$12_storage_$",
+                          "typeString": "mapping(uint256 => struct Election.Driver storage ref)"
+                        }
+                      },
+                      "id": 64,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 63,
+                        "name": "driversCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 18,
+                        "src": "868:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "860:21:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Driver_$12_storage",
+                        "typeString": "struct Election.Driver storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 66,
+                          "name": "driversCount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 18,
+                          "src": "891:12:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 67,
+                          "name": "_name",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 56,
+                          "src": "905:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 68,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "912:1:0",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 69,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "915:1:0",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          }
+                        ],
+                        "id": 65,
+                        "name": "Driver",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12,
+                        "src": "884:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Driver_$12_storage_ptr_$",
+                          "typeString": "type(struct Election.Driver storage pointer)"
+                        }
+                      },
+                      "id": 70,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "884:33:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Driver_$12_memory",
+                        "typeString": "struct Election.Driver memory"
+                      }
+                    },
+                    "src": "860:57:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Driver_$12_storage",
+                      "typeString": "struct Election.Driver storage ref"
+                    }
+                  },
+                  "id": 72,
+                  "nodeType": "ExpressionStatement",
+                  "src": "860:57:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 74,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addDriver",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 57,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 56,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 74,
+                  "src": "796:19:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 55,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "796:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "795:21:0"
+            },
+            "returnParameters": {
+              "id": 58,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "825:0:0"
+            },
+            "scope": 113,
+            "src": "776:148:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 111,
+              "nodeType": "Block",
+              "src": "989:455:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 90,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 86,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "id": 84,
+                            "name": "_DriverId",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 76,
+                            "src": "1133:9:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": ">",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "hexValue": "30",
+                            "id": 85,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1145:1:0",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          },
+                          "src": "1133:13:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "&&",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 89,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "id": 87,
+                            "name": "_DriverId",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 76,
+                            "src": "1150:9:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "<=",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "id": 88,
+                            "name": "driversCount",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 18,
+                            "src": "1163:12:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "1150:25:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "src": "1133:42:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 83,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        188,
+                        189
+                      ],
+                      "referencedDeclaration": 188,
+                      "src": "1125:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 91,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1125:51:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 92,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1125:51:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 98,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 93,
+                          "name": "drivers",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16,
+                          "src": "1301:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Driver_$12_storage_$",
+                            "typeString": "mapping(uint256 => struct Election.Driver storage ref)"
+                          }
+                        },
+                        "id": 95,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 94,
+                          "name": "_DriverId",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 76,
+                          "src": "1309:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "1301:18:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Driver_$12_storage",
+                          "typeString": "struct Election.Driver storage ref"
+                        }
+                      },
+                      "id": 96,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "lat",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 9,
+                      "src": "1301:22:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 97,
+                      "name": "lat",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 78,
+                      "src": "1326:3:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1301:28:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 99,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1301:28:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 105,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 100,
+                          "name": "drivers",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16,
+                          "src": "1339:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Driver_$12_storage_$",
+                            "typeString": "mapping(uint256 => struct Election.Driver storage ref)"
+                          }
+                        },
+                        "id": 102,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 101,
+                          "name": "_DriverId",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 76,
+                          "src": "1347:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "1339:18:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Driver_$12_storage",
+                          "typeString": "struct Election.Driver storage ref"
+                        }
+                      },
+                      "id": 103,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "long",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 11,
+                      "src": "1339:23:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 104,
+                      "name": "long",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 80,
+                      "src": "1365:4:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1339:30:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 106,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1339:30:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 108,
+                        "name": "_DriverId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 76,
+                        "src": "1427:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 107,
+                      "name": "votedEvent",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 22,
+                      "src": "1416:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 109,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1416:21:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 110,
+                  "nodeType": "EmitStatement",
+                  "src": "1411:26:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 112,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "vote",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 81,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 76,
+                  "name": "_DriverId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 112,
+                  "src": "945:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 75,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "945:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 78,
+                  "name": "lat",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 112,
+                  "src": "961:8:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 77,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "961:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 80,
+                  "name": "long",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 112,
+                  "src": "971:9:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 79,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "971:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "944:37:0"
+            },
+            "returnParameters": {
+              "id": 82,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "989:0:0"
+            },
+            "scope": 113,
+            "src": "930:514:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 114,
+        "src": "24:1422:0"
+      }
+    ],
+    "src": "0:1447:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x4250A474d6D463bbEF5D8C654084551bF0c212da",
+      "transactionHash": "0xb0d96231a6cdec5f970519ee4e06789df86de2d6e5f319f0a15521ba55e3737c"
+    },
+    "1563090054256": {
+      "events": {},
+      "links": {},
+      "address": "0x9C11D5A1ac89795dc52e151869A9978Dd8F25858",
+      "transactionHash": "0xa02b615114fdf1909b404956e3c168cd2ca42533778f6f2e51ff43df50b72e7c"
+    },
+    "1563091353987": {
+      "events": {},
+      "links": {},
+      "address": "0x301ecEe70D13913915e211e4b28148D7aE16b560",
+      "transactionHash": "0xdfd6dda5d61f4699125388429e76dab69fd72ae96f5b288bec6e44795ef1a309"
+    },
+    "1563092066326": {
+      "events": {},
+      "links": {},
+      "address": "0xD86A2D5f86872766DDFFd727747BaF47E9Ab0C29",
+      "transactionHash": "0x938535cd51b70d66cba8e6ef4d2c68d0a50db135bc316819cc89343eb64a63e8"
+    },
+    "1563180414483": {
+      "events": {},
+      "links": {},
+      "address": "0xe1205e915445077556FD6dFB315407a50576100D",
+      "transactionHash": "0x26df10925132acf2f5bbb856922aa7934f769e7b5362f9e9ec98288103dff1a9"
+    }
+  },
+  "schemaVersion": "3.0.10",
+  "updatedAt": "2019-07-21T13:40:50.433Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
