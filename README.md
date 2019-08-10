@@ -1,6 +1,6 @@
 # SmartCode
 
-*** Currently hosted on http://3.17.172.8:3000/
+***Currently hosted on http://3.17.172.8:3000/***
 
 ## Dependencies
 Install these prerequisites to follow along with the tutorial. See free video tutorial or a full explanation of each prerequisite.
