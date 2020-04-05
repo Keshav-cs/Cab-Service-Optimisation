@@ -1,6 +1,6 @@
 # SmartCode
 
-***Currently hosted on http://3.17.172.8:3000/***
+**Link to the Paper : [link](https://drive.google.com/file/d/1xkKPP-9wrjM-EIR-vCPT-qsIGkJJhHuY/view?usp=sharing)**
 
 ## Dependencies
 Install these prerequisites to follow along with the tutorial. See free video tutorial or a full explanation of each prerequisite.
